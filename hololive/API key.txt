@@ -1,4 +1,0 @@
-AIzaSyDMEuS163fdWrwgIAclmdm78w5lnkmR-DM
-
-
-https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=1000&playlistId=UUQ0UDLQCjY0rmuxCDE38FGg&alt=json&key=AIzaSyDMEuS163fdWrwgIAclmdm78w5lnkmR-DM
