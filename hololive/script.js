@@ -24,7 +24,7 @@ function getJSON(){
     var url=document.getElementById("inp").value;
     var playlistID = Idxtract(url,1);
     document.getElementById("addin").innerHTML = "<b>PlaylistID: </b>"+playlistID;
-    var APIkey = "AIzaSyDMEuS163fdWrwgIAclmdm78w5lnkmR-DM";
+    var APIkey = ;
     var numrex = "51";
     var da = "https://www.googleapis.com/youtube/v3/playlistItems?pageToken="+pgToken+"&part=snippet&maxResults="+numrex+"&playlistId="+playlistID+"&alt=json&key="+APIkey;
     window.open(da, '_blank');
