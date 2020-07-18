@@ -19,14 +19,28 @@ function Idxtract(s,type){
     }
     return id;
 }
-
+let pgToken = '',Json1=[];
 function getJSON(){
     var url=document.getElementById("inp").value;
     var playlistID = Idxtract(url,1);
     document.getElementById("addin").innerHTML = "<b>PlaylistID: </b>"+playlistID;
     var APIkey = "AIzaSyDMEuS163fdWrwgIAclmdm78w5lnkmR-DM";
-    var numrex = "1000",pgToken = '';
-    var da = "https://www.googleapis.com/youtube/v3/playlistItems?pageToken="+pgToken+"&part=snippet%2CcontentDetails&maxResults="+numrex+"&playlistId="+playlistID+"&alt=json&key="+APIkey;
-    
+    var numrex = "51";
+    var da = "https://www.googleapis.com/youtube/v3/playlistItems?pageToken="+pgToken+"&part=snippet&maxResults="+numrex+"&playlistId="+playlistID+"&alt=json&key="+APIkey;
     window.open(da, '_blank');
+    return da;
 }
+
+async function fchJSON(){
+    while(pgToken != undefined){
+        const response = await fetch(getJSON());
+        const data = await response.json();
+        Json1 = data;
+        console.log(Json1);
+        //document.getElementById("jsd").innerHTML = JSON.stringify(Json1,null,2);
+        pgToken = data.nextPageToken;
+        console.log(pgToken);
+    }
+}
+
+
